@@ -1,96 +1,104 @@
-# legacy-journal
+# Anchor Journal
+
+A decentralized journaling application built on Solana using the Anchor framework. It allows users to create, update, and delete journals and their entries, with data stored on-chain.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node v18.18.0 or higher
+Ensure you have the following installed:
 
-- Rust v1.77.2 or higher
-- Anchor CLI 0.30.1 or higher
-- Solana CLI 1.18.17 or higher
+- **Node.js**: v18.18.0 or higher
+- **Rust**: v1.77.2 or higher
+- **Anchor CLI**: v0.30.1 or higher
+- **Solana CLI**: v1.18.17 or higher
 
 ### Installation
 
-#### Clone the repo
+1. Clone the repository:
 
-```shell
-git clone <repo-url>
-cd <repo-name>
-```
+   ```shell
+   git clone git@github.com:iamramtin/journal-dapp.git
+   cd journal-dapp
+   ```
 
-#### Install Dependencies
+2. Install dependencies:
 
-```shell
-pnpm install
-```
+   ```shell
+   pnpm install
+   ```
 
-#### Start the web app
+3. Start the web app:
 
-```
-pnpm dev
-```
+   ```shell
+   pnpm dev
+   ```
 
 ## Apps
 
-### anchor
+### Anchor
 
 This is a Solana program written in Rust using the Anchor framework.
 
 #### Commands
 
-You can use any normal anchor commands. Either move to the `anchor` directory and run the `anchor` command or prefix the
-command with `pnpm`, eg: `pnpm anchor`.
+1. **Sync the program ID**:  
+   Updates the program ID in the configuration and source files.
 
-#### Sync the program id:
+   ```shell
+   pnpm anchor keys sync
+   ```
 
-Running this command will create a new keypair in the `anchor/target/deploy` directory and save the address to the
-Anchor config file and update the `declare_id!` macro in the `./src/lib.rs` file of the program.
+2. **Start the Solana test validator**:  
+   Launches a local Solana test validator with the program deployed.
 
-You will manually need to update the constant in `anchor/lib/counter-exports.ts` to match the new program id.
+   ```shell
+   pnpm anchor::localnet
+   ```
 
-```shell
-pnpm anchor keys sync
-```
+3. **Build and deploy the Anchor program**:
 
-#### Build the program:
+   ```shell
+   pnpm anchor::build
+   pnpm anchor::deploy
+   ```
 
-```shell
-pnpm anchor-build
-```
+4. **Run the tests**:  
+   Executes the test suite for the Anchor program.
 
-#### Start the test validator with the program deployed:
+   ```shell
+   pnpm anchor::test
+   ```
 
-```shell
-pnpm anchor-localnet
-```
+5. **Request an airdrop**:  
+   Use this script to request an airdrop of SOL to your wallet for testing purposes.
 
-#### Run the tests
+   ```shell
+   pnpm airdrop
+   ```
 
-```shell
-pnpm anchor-test
-```
+### Web
 
-#### Deploy to Devnet
-
-```shell
-pnpm anchor deploy --provider.cluster devnet
-```
-
-### web
-
-This is a React app that uses the Anchor generated client to interact with the Solana program.
+This is a React app that uses the Anchor-generated client to interact with the Solana program.
 
 #### Commands
 
-Start the web app
+- **Start the web app**:  
+  Launches the development server.
 
-```shell
-pnpm dev
-```
+  ```shell
+  pnpm dev
+  ```
 
-Build the web app
+- **Build the web app**:  
+  Creates a production build of the web app.
 
-```shell
-pnpm build
-```
+  ```shell
+  pnpm build
+  ```
+
+- **Run the production server**:  
+  Starts the web app in production mode.
+  ```shell
+  pnpm start
+  ```

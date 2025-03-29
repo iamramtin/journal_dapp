@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "anchor": "cd anchor && anchor",
-    "anchor-build": "cd anchor && anchor build",
-    "anchor-localnet": "cd anchor && anchor localnet",
-    "anchor-test": "cd anchor && anchor test",
+    "anchor::localnet": "cd anchor && anchor localnet",
+    "anchor::build": "./scripts/build_anchor.sh",
+    "anchor::deploy": "./scripts/deploy_anchor.sh",
+    "anchor::test": "./scripts/test_anchor.sh",
+    "airdrop": "npx ts-node scripts/airdrop.ts",
     "dev": "next dev",
-    "build": "next build",
     "ci": "npm run build",
     "start": "next start",
     "lint": "next lint"
