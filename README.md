@@ -53,7 +53,7 @@ This is a Solana program written in Rust using the Anchor framework.
    Launches a local Solana test validator with the program deployed.
 
    ```shell
-   pnpm anchor::localnet
+   pnpm local-validator
    ```
 
 3. **Build and deploy the Anchor program**:

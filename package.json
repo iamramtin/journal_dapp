@@ -5,17 +5,18 @@
   "scripts": {
     "anchor": "cd anchor && anchor",
     "anchor::localnet": "cd anchor && anchor localnet",
+    "local-validator": "solana-test-validator",
     "anchor::build": "./scripts/build_anchor.sh",
     "anchor::deploy": "./scripts/deploy_anchor.sh",
     "anchor::test": "./scripts/test_anchor.sh",
     "airdrop": "npx ts-node scripts/airdrop.ts",
+    "build": "next build",
     "dev": "next dev",
-    "ci": "npm run build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@coral-xyz/anchor": "0.30.1",
+    "@coral-xyz/anchor": "^0.30.1",
     "@solana/spl-token": "0.4.12",
     "@solana/wallet-adapter-base": "0.9.24",
     "@solana/wallet-adapter-react": "0.15.36",
@@ -25,6 +26,7 @@
     "@tanstack/react-query": "^5.66.9",
     "@tanstack/react-query-next-experimental": "^5.66.9",
     "daisyui": "^4.12.24",
+    "date-fns": "^4.1.0",
     "jotai": "^2.12.1",
     "next": "14.2.24",
     "react": "^18",
